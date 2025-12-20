@@ -21,6 +21,10 @@ void ad_logger_fini();
 extern zlog_category_t *g_log_general;
 extern zlog_category_t *g_log_transport;
 extern zlog_category_t *g_log_tun;
+extern zlog_category_t *g_log_kex;
+extern zlog_category_t *g_log_crypt;
+extern zlog_category_t *g_log_auth;
+extern zlog_category_t *g_log_routing;
 
 /* ============================
  * Logging Macros: GENERAL
@@ -75,6 +79,78 @@ extern zlog_category_t *g_log_tun;
 
 #define AD_LOG_TUN_FATAL(fmt, ...) \
     zlog_fatal(g_log_tun, fmt, ##__VA_ARGS__)
+
+/* ============================
+ * Logging Macros: KeX
+ * ============================ */
+#define AD_LOG_KEX_DEBUG(fmt, ...) \
+    zlog_debug(g_log_kex, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_KEX_INFO(fmt, ...) \
+    zlog_info(g_log_kex, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_KEX_WARN(fmt, ...) \
+    zlog_warn(g_log_kex, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_KEX_ERROR(fmt, ...) \
+    zlog_error(g_log_kex, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_KEX_FATAL(fmt, ...) \
+    zlog_fatal(g_log_kex, fmt, ##__VA_ARGS__)
+
+/* ============================
+ * Logging Macros: CRYPT
+ * ============================ */
+#define AD_LOG_CRYPT_DEBUG(fmt, ...) \
+    zlog_debug(g_log_crypt, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_CRYPT_INFO(fmt, ...) \
+    zlog_info(g_log_crypt, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_CRYPT_WARN(fmt, ...) \
+    zlog_warn(g_log_crypt, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_CRYPT_ERROR(fmt, ...) \
+    zlog_error(g_log_crypt, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_CRYPT_FATAL(fmt, ...) \
+    zlog_fatal(g_log_crypt, fmt, ##__VA_ARGS__)
+
+/* ============================
+ * Logging Macros: AUTH
+ * ============================ */
+#define AD_LOG_AUTH_DEBUG(fmt, ...) \
+    zlog_debug(g_log_auth, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_AUTH_INFO(fmt, ...) \
+    zlog_info(g_log_auth, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_AUTH_WARN(fmt, ...) \
+    zlog_warn(g_log_auth, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_AUTH_ERROR(fmt, ...) \
+    zlog_error(g_log_auth, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_AUTH_FATAL(fmt, ...) \
+    zlog_fatal(g_log_auth, fmt, ##__VA_ARGS__)
+
+/* ============================
+ * Logging Macros: Routing
+ * ============================ */
+#define AD_LOG_ROUTING_DEBUG(fmt, ...) \
+    zlog_debug(g_log_routing, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_ROUTING_INFO(fmt, ...) \
+    zlog_info(g_log_routing, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_ROUTING_WARN(fmt, ...) \
+    zlog_warn(g_log_routing, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_ROUTING_ERROR(fmt, ...) \
+    zlog_error(g_log_routing, fmt, ##__VA_ARGS__)
+
+#define AD_LOG_ROUTING_FATAL(fmt, ...) \
+    zlog_fatal(g_log_routing, fmt, ##__VA_ARGS__)
 
 #ifdef __cplusplus
 }
